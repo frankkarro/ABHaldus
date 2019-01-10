@@ -1,0 +1,634 @@
+1. Väljasta kogu tabeli LUGEJAD andmed.
+select * from Lugeja;
++-----------+-------------+---------+----------+------------+-----------------------+----------------------+---------                                    -----+--------------------+
+| lugeja_id | isikukood   | Eesnimi | Perenimi | Telefon    | Aadress               | Email                | Amet                                             | Asutus             |
++-----------+-------------+---------+----------+------------+-----------------------+----------------------+---------                                    -----+--------------------+
+|         1 | 38910262497 | Kalle   | Kohin    | 56789576   | Tartu Pärna 23-12     | kalle12@hot.ee       | õpilane                                          | Tartu KHK          |
+|         2 | 49011292497 | Tiia    | Tuisk    | 50468977   | Tartu Riia 126        | tiia.tuisk@hotmail.c | õpetaja                                          | Meie kool          |
+|         3 | 49110302488 | Pille   | Pill     | 51689789   | Tartu Jalaka 12-3     | pillekas@gmail.com   | õpilane                                          | Meie kool          |
+|         4 | 49010162558 | Kati    | Kask     | 53459878   | Tartu Kopli 1         | kati_k@kool.ee       | juhiabi                                          | AS Töö             |
+|         5 | 48910012697 | Malle   | Moos     | 56423789   | Tartu Võru 54-21      |                      | koristaj                                    a    | Oü Kord ja Puhtus  |
+|         6 | 48810242787 | Mari    | Maasikas | 50458977   | Tartu Aida 3-14       |                      |                                                  |                    |
+|         7 | 38810222497 | Joosep  | Jalakas  | 556457575  | Tartu                 | joosepjalakas@ut.ee  | lektor                                           | Tartu ülikool      |
+|         8 | 38712062497 | Tiit    | Tikk     | 547799133  | Tartu                 | tiit.tikk@astiit.ee  | juhataja                                         | As Tiit            |
+|         9 | 38911212491 | Ragnar  | Roos     | 7715478    | Tartu                 | rax_x@gmail.com      | õpilane                                          | Uus kool           |
+|        10 | 38806062494 | Robert  | Rohi     | 588787362  | Tartu Võru 36         | robi@uuuskool.ee     | õpetaja                                          | Uus kool           |
+|        11 | 39006022497 | Kevin   | Kivi     | 59791547   | Tartu Turu 5-12       | kivi@hot.ee          | õpilane                                          | Uus kool           |
+|        12 | 49010262577 | Sille   | Siil     | 454667993  | Tartu Võru 69         | siilike@udus.ee      | üliõpila                                    ne   | Tartu ülikool      |
+|        13 | 48910222497 | Lilli   | Lill     | 487541247  | Tartu Pärna 34        | lilli.lill@kodu.ee   | kodune                                           |                    |
+|        14 | 49112162497 | Luisa   | Tuul     | 558787887  | Tartu Vanemuise 56-23 | tuul@puhub.ee        |                                                  |                    |
+|        15 | 49012292493 | Sandra  | Saar     | 589456534  | Tartu Narva mnt 34-12 |                      |                                                  |                    |
+|        16 | 48910212197 | Kadri   | Kade     |            | Tartu Võru 89         | kati@kokk.ee         | kokk                                             | AS Söök ja jook    |
+|        17 | 38811202495 | Vaiko   | Kook     | 7689898    | Tartu Pikk 56-10      |                      | autojuht                                         | Oüauto             |
+|        18 | 38710022497 | Veiko   | Vesi     | 5877693    | Tartu Lai 76-11       | veiko@vesi.com       |                                                  |                    |
+|        19 | 39212262427 | Hannes  | Hein     |            | Tartu Betooni 24      | heina@tool.ee        | müüja                                            | AS Tool            |
+|        20 | 38904292497 | Leo     | Loots    | 569873223  | Tartu Pepleri 2-1     | loots@maja.ee        | autojuht                                         | AS Maja            |
+|        21 | 49111162497 | Liia    | Lips     | 69876222   | Tartu Pärna 6         | lipsik@lk.ee         | müüja                                            | Riidepood          |
+|        22 | 38809262497 | Kalev   | Komm     | 5464645747 | Tartu Võru 33         | kalevikomm@komm.com  | müüja                                            | Kommipood          |
+|        23 | 49107232497 | Rita    | Rehv     | 52323424   | Tartu Riia 120        | rita.rehv@rehvivah.e | kassapid                                    aja  | Rehvivahetus       |
+|        24 | 38911222492 | Janek   | Jooksik  | 56787900   | Tartu Raatuse 22-4    | janek@hot.ee         | õpilane                                          | Meie kool          |
+|        25 | 49009162497 | Jane    | Jänes    | 5424324325 | Tartu Piima 12        | jane321@hot.ee       | õpilane                                          | Teie kool          |
+|        26 | 39112312497 | Mart    | Karu     | 587979797  | Tartu Aleksandri 3-2  | mart.karu@teiekool.e | õpetaja                                          | Teie kool          |
+|        27 | 48901312397 | Kati    | Karu     | 74645679   | Tartu Jalaka 23-3     | kati.karu@teiekool.e | õpilane                                          | Teie kool          |
+|        28 | 39706243197 | Frank   | Karro    | 56042555   | Tartu                 | frank.karro@khk.ee   | admin                                            | khk                |
++-----------+-------------+---------+----------+------------+-----------------------+----------------------+---------                                    -----+--------------------+
+
+
+2. Väljasta lugejate eesnimi, perenimi ja aadress.
+select eesnimi, perenimi, aadress from Lugeja;
++---------+----------+-----------------------+
+| eesnimi | perenimi | aadress               |
++---------+----------+-----------------------+
+| Kalle   | Kohin    | Tartu Pärna 23-12     |
+| Tiia    | Tuisk    | Tartu Riia 126        |
+| Pille   | Pill     | Tartu Jalaka 12-3     |
+| Kati    | Kask     | Tartu Kopli 1         |
+| Malle   | Moos     | Tartu Võru 54-21      |
+| Mari    | Maasikas | Tartu Aida 3-14       |
+| Joosep  | Jalakas  | Tartu                 |
+| Tiit    | Tikk     | Tartu                 |
+| Ragnar  | Roos     | Tartu                 |
+| Robert  | Rohi     | Tartu Võru 36         |
+| Kevin   | Kivi     | Tartu Turu 5-12       |
+| Sille   | Siil     | Tartu Võru 69         |
+| Lilli   | Lill     | Tartu Pärna 34        |
+| Luisa   | Tuul     | Tartu Vanemuise 56-23 |
+| Sandra  | Saar     | Tartu Narva mnt 34-12 |
+| Kadri   | Kade     | Tartu Võru 89         |
+| Vaiko   | Kook     | Tartu Pikk 56-10      |
+| Veiko   | Vesi     | Tartu Lai 76-11       |
+| Hannes  | Hein     | Tartu Betooni 24      |
+| Leo     | Loots    | Tartu Pepleri 2-1     |
+| Liia    | Lips     | Tartu Pärna 6         |
+| Kalev   | Komm     | Tartu Võru 33         |
+| Rita    | Rehv     | Tartu Riia 120        |
+| Janek   | Jooksik  | Tartu Raatuse 22-4    |
+| Jane    | Jänes    | Tartu Piima 12        |
+| Mart    | Karu     | Tartu Aleksandri 3-2  |
+| Kati    | Karu     | Tartu Jalaka 23-3     |
+| Frank   | Karro    | Tartu                 |
++---------+----------+-----------------------+
+
+
+3. Leia kõik lugejad, kelle perenimi on Karu. Väljasta eesnimi ja perenimi. Mitu neid on?
+select eesnimi, perenimi from Lugeja where perenimi='Karu';
++---------+----------+
+| eesnimi | perenimi |
++---------+----------+
+| Mart    | Karu     |
+| Kati    | Karu     |
++---------+----------+
+
+
+4. Leia lugejad, kelle eesnimi on Kati. Väljasta eesnimi ja perenimi. Mitu neid on?
+select eesnimi, perenimi from Lugeja where eesnimi='Kati';
++---------+----------+
+| eesnimi | perenimi |
++---------+----------+
+| Kati    | Kask     |
+| Kati    | Karu     |
++---------+----------+
+
+
+5. Järjesta lugejad perenime järgi kasvavalt. Väljasta eesnimi ja perenimi. 
+select eesnimi, perenimi from Lugeja order by perenimi asc;
++---------+----------+
+| eesnimi | perenimi |
++---------+----------+
+| Hannes  | Hein     |
+| Joosep  | Jalakas  |
+| Janek   | Jooksik  |
+| Jane    | Jänes    |
+| Kadri   | Kade     |
+| Frank   | Karro    |
+| Mart    | Karu     |
+| Kati    | Karu     |
+| Kati    | Kask     |
+| Kevin   | Kivi     |
+| Kalle   | Kohin    |
+| Kalev   | Komm     |
+| Vaiko   | Kook     |
+| Lilli   | Lill     |
+| Liia    | Lips     |
+| Leo     | Loots    |
+| Mari    | Maasikas |
+| Malle   | Moos     |
+| Pille   | Pill     |
+| Rita    | Rehv     |
+| Robert  | Rohi     |
+| Ragnar  | Roos     |
+| Sandra  | Saar     |
+| Sille   | Siil     |
+| Tiit    | Tikk     |
+| Tiia    | Tuisk    |
+| Luisa   | Tuul     |
+| Veiko   | Vesi     |
++---------+----------+
+
+6. Järjesta lugejad esmalt perenime seejärel eesnime järgi kasvavalt. Väljasta perenimi ja eesnimi. 
+select eesnimi, perenimi from Lugeja order by perenimi asc, eesnimi asc;
++---------+----------+
+| eesnimi | perenimi |
++---------+----------+
+| Hannes  | Hein     |
+| Joosep  | Jalakas  |
+| Janek   | Jooksik  |
+| Jane    | Jänes    |
+| Kadri   | Kade     |
+| Frank   | Karro    |
+| Kati    | Karu     |
+| Mart    | Karu     |
+| Kati    | Kask     |
+| Kevin   | Kivi     |
+| Kalle   | Kohin    |
+| Kalev   | Komm     |
+| Vaiko   | Kook     |
+| Lilli   | Lill     |
+| Liia    | Lips     |
+| Leo     | Loots    |
+| Mari    | Maasikas |
+| Malle   | Moos     |
+| Pille   | Pill     |
+| Rita    | Rehv     |
+| Robert  | Rohi     |
+| Ragnar  | Roos     |
+| Sandra  | Saar     |
+| Sille   | Siil     |
+| Tiit    | Tikk     |
+| Tiia    | Tuisk    |
+| Luisa   | Tuul     |
+| Veiko   | Vesi     |
++---------+----------+
+
+
+7. Leia lugejad, kelle perenimi algab K tähega. Väljasta lugejate perenimed. 
+select perenimi from Lugeja where perenimi like 'K%';
++----------+
+| perenimi |
++----------+
+| Kohin    |
+| Kask     |
+| Kivi     |
+| Kade     |
+| Kook     |
+| Komm     |
+| Karu     |
+| Karu     |
+| Karro    |
++----------+
+
+
+8. Leia lugejad, kelle perenimi algab L või M tähega. Väljasta lugejate perenimed.
+select perenimi from Lugeja where perenimi like 'L%' or perenimi like 'M%';
++----------+
+| perenimi |
++----------+
+| Moos     |
+| Maasikas |
+| Lill     |
+| Loots    |
+| Lips     |
++----------+
+
+
+9. Leia lugejad, kelle eesnimi ja perenimi algavad M tähega. Väljasta lugejate ees- ja perenimed.
+select eesnimi, perenimi from Lugeja where perenimi like 'M%' and eesnimi like 'M%';
++---------+----------+
+| eesnimi | perenimi |
++---------+----------+
+| Malle   | Moos     |
+| Mari    | Maasikas |
++---------+----------+
+
+10. Leia lugejad, kes elavad Riia tänaval. Väljasta lugejate ees- ja perenimed ning aadress.
+select eesnimi, perenimi, aadress from Lugeja where aadress like '%Riia%';
++---------+----------+----------------+
+| eesnimi | perenimi | aadress        |
++---------+----------+----------------+
+| Tiia    | Tuisk    | Tartu Riia 126 |
+| Rita    | Rehv     | Tartu Riia 120 |
++---------+----------+----------------+
+
+
+11. Leia lugejad, kelle ametiks on õpilane. Väljasta lugejate ees- ja perenimed ning amet.
+select eesnimi, perenimi, amet from Lugeja where amet='õpilane';
++---------+----------+----------+
+| eesnimi | perenimi | amet     |
++---------+----------+----------+
+| Kalle   | Kohin    | õpilane  |
+| Pille   | Pill     | õpilane  |
+| Ragnar  | Roos     | õpilane  |
+| Kevin   | Kivi     | õpilane  |
+| Janek   | Jooksik  | õpilane  |
+| Jane    | Jänes    | õpilane  |
+| Kati    | Karu     | õpilane  |
++---------+----------+----------+
+
+
+12. Väljasta lugejate ees- ja perenimi ühes veerus. Kasuta aliast Nimi.
+select concat(eesnimi,' ', perenimi) as Nimi from Lugeja;
++----------------+
+| Nimi           |
++----------------+
+| Kalle Kohin    |
+| Tiia Tuisk     |
+| Pille Pill     |
+| Kati Kask      |
+| Malle Moos     |
+| Mari Maasikas  |
+| Joosep Jalakas |
+| Tiit Tikk      |
+| Ragnar Roos    |
+| Robert Rohi    |
+| Kevin Kivi     |
+| Sille Siil     |
+| Lilli Lill     |
+| Luisa Tuul     |
+| Sandra Saar    |
+| Kadri Kade     |
+| Vaiko Kook     |
+| Veiko Vesi     |
+| Hannes Hein    |
+| Leo Loots      |
+| Liia Lips      |
+| Kalev Komm     |
+| Rita Rehv      |
+| Janek Jooksik  |
+| Jane Jänes     |
+| Mart Karu      |
+| Kati Karu      |
+| Frank Karro    |
++----------------+
+
+
+13. Väljasta lugejate perenimi ja perenimede esitäht. Kasuta aliast p_esitaht.
+select concat(perenimi,' ',left(perenimi,1)) as p_esitaht from Lugeja;
++------------+
+| p_esitaht  |
++------------+
+| Kohin K    |
+| Tuisk T    |
+| Pill P     |
+| Kask K     |
+| Moos M     |
+| Maasikas M |
+| Jalakas J  |
+| Tikk T     |
+| Roos R     |
+| Rohi R     |
+| Kivi K     |
+| Siil S     |
+| Lill L     |
+| Tuul T     |
+| Saar S     |
+| Kade K     |
+| Kook K     |
+| Vesi V     |
+| Hein H     |
+| Loots L    |
+| Lips L     |
+| Komm K     |
+| Rehv R     |
+| Jooksik J  |
+| Jänes J    |
+| Karu K     |
+| Karu K     |
+| Karro K    |
++------------+
+
+
+14. Väljasta lugejate eesnimi ja eesnime viimane täht. Kasuta aliast e_viimane_t.
+select concat(eesnimi,' ',right(eesnimi,1)) as e_viimane_t from Lugeja;
++-------------+
+| e_viimane_t |
++-------------+
+| Kalle e     |
+| Tiia a      |
+| Pille e     |
+| Kati i      |
+| Malle e     |
+| Mari i      |
+| Joosep p    |
+| Tiit t      |
+| Ragnar r    |
+| Robert t    |
+| Kevin n     |
+| Sille e     |
+| Lilli i     |
+| Luisa a     |
+| Sandra a    |
+| Kadri i     |
+| Vaiko o     |
+| Veiko o     |
+| Hannes s    |
+| Leo o       |
+| Liia a      |
+| Kalev v     |
+| Rita a      |
+| Janek k     |
+| Jane e      |
+| Mart t      |
+| Kati i      |
+| Frank k     |
++-------------+
+
+
+15. Väljasta lugejate eesnimed suurtähtedena.
+select UPPER(eesnimi) from Lugeja;
++----------------+
+| UPPER(eesnimi) |
++----------------+
+| KALLE          |
+| TIIA           |
+| PILLE          |
+| KATI           |
+| MALLE          |
+| MARI           |
+| JOOSEP         |
+| TIIT           |
+| RAGNAR         |
+| ROBERT         |
+| KEVIN          |
+| SILLE          |
+| LILLI          |
+| LUISA          |
+| SANDRA         |
+| KADRI          |
+| VAIKO          |
+| VEIKO          |
+| HANNES         |
+| LEO            |
+| LIIA           |
+| KALEV          |
+| RITA           |
+| JANEK          |
+| JANE           |
+| MART           |
+| KATI           |
+| FRANK          |
++----------------+
+
+
+16. Väljasta lugejate isikukoodist 2-st sümbolist alates 2 sümbolit (sünniaasta kaks viimast numbrit).
+select substring(isikukood,2,2) from Lugeja;
++--------------------------+
+| substring(isikukood,2,2) |
++--------------------------+
+| 89                       |
+| 90                       |
+| 91                       |
+| 90                       |
+| 89                       |
+| 88                       |
+| 88                       |
+| 87                       |
+| 89                       |
+| 88                       |
+| 90                       |
+| 90                       |
+| 89                       |
+| 91                       |
+| 90                       |
+| 89                       |
+| 88                       |
+| 87                       |
+| 92                       |
+| 89                       |
+| 91                       |
+| 88                       |
+| 91                       |
+| 89                       |
+| 90                       |
+| 91                       |
+| 89                       |
+| 97                       |
++--------------------------+
+
+
+17. Leia iga lugeja sünni päev isikukoodist st päev (01-31), millal omanik sündis. Väljasta nimi ja päev.
+select eesnimi,substring(isikukood,6,2) from Lugeja;
++---------+--------------------------+
+| eesnimi | substring(isikukood,6,2) |
++---------+--------------------------+
+| Kalle   | 26                       |
+| Tiia    | 29                       |
+| Pille   | 30                       |
+| Kati    | 16                       |
+| Malle   | 01                       |
+| Mari    | 24                       |
+| Joosep  | 22                       |
+| Tiit    | 06                       |
+| Ragnar  | 21                       |
+| Robert  | 06                       |
+| Kevin   | 02                       |
+| Sille   | 26                       |
+| Lilli   | 22                       |
+| Luisa   | 16                       |
+| Sandra  | 29                       |
+| Kadri   | 21                       |
+| Vaiko   | 20                       |
+| Veiko   | 02                       |
+| Hannes  | 26                       |
+| Leo     | 29                       |
+| Liia    | 16                       |
+| Kalev   | 26                       |
+| Rita    | 23                       |
+| Janek   | 22                       |
+| Jane    | 16                       |
+| Mart    | 31                       |
+| Kati    | 31                       |
+| Frank   | 24                       |
++---------+--------------------------+
+
+
+18. Leia iga lugeja sünnikuu isikukoodist (01-12). Väljasta nimi ja kuu.
+select eesnimi,substring(isikukood,4,2) from Lugeja;
++---------+--------------------------+
+| eesnimi | substring(isikukood,4,2) |
++---------+--------------------------+
+| Kalle   | 10                       |
+| Tiia    | 11                       |
+| Pille   | 10                       |
+| Kati    | 10                       |
+| Malle   | 10                       |
+| Mari    | 10                       |
+| Joosep  | 10                       |
+| Tiit    | 12                       |
+| Ragnar  | 11                       |
+| Robert  | 06                       |
+| Kevin   | 06                       |
+| Sille   | 10                       |
+| Lilli   | 10                       |
+| Luisa   | 12                       |
+| Sandra  | 12                       |
+| Kadri   | 10                       |
+| Vaiko   | 11                       |
+| Veiko   | 10                       |
+| Hannes  | 12                       |
+| Leo     | 04                       |
+| Liia    | 11                       |
+| Kalev   | 09                       |
+| Rita    | 07                       |
+| Janek   | 11                       |
+| Jane    | 09                       |
+| Mart    | 12                       |
+| Kati    | 01                       |
+| Frank   | 06                       |
++---------+--------------------------+
+
+
+19. Väljasta lugeja eesnimi, perenimi, sünniaeg järgneval kujul nt 02.03.06 ja isikukood.
+select eesnimi, perenimi, concat(substring(isikukood,6,2),'.',substring(isikukood,4,2),'.',substring(isikukood,2,2)) as kuupaev, isikukood from Lugeja;
++---------+----------+----------+-------------+
+| eesnimi | perenimi | kuupaev  | isikukood   |
++---------+----------+----------+-------------+
+| Kalle   | Kohin    | 26.10.89 | 38910262497 |
+| Tiia    | Tuisk    | 29.11.90 | 49011292497 |
+| Pille   | Pill     | 30.10.91 | 49110302488 |
+| Kati    | Kask     | 16.10.90 | 49010162558 |
+| Malle   | Moos     | 01.10.89 | 48910012697 |
+| Mari    | Maasikas | 24.10.88 | 48810242787 |
+| Joosep  | Jalakas  | 22.10.88 | 38810222497 |
+| Tiit    | Tikk     | 06.12.87 | 38712062497 |
+| Ragnar  | Roos     | 21.11.89 | 38911212491 |
+| Robert  | Rohi     | 06.06.88 | 38806062494 |
+| Kevin   | Kivi     | 02.06.90 | 39006022497 |
+| Sille   | Siil     | 26.10.90 | 49010262577 |
+| Lilli   | Lill     | 22.10.89 | 48910222497 |
+| Luisa   | Tuul     | 16.12.91 | 49112162497 |
+| Sandra  | Saar     | 29.12.90 | 49012292493 |
+| Kadri   | Kade     | 21.10.89 | 48910212197 |
+| Vaiko   | Kook     | 20.11.88 | 38811202495 |
+| Veiko   | Vesi     | 02.10.87 | 38710022497 |
+| Hannes  | Hein     | 26.12.92 | 39212262427 |
+| Leo     | Loots    | 29.04.89 | 38904292497 |
+| Liia    | Lips     | 16.11.91 | 49111162497 |
+| Kalev   | Komm     | 26.09.88 | 38809262497 |
+| Rita    | Rehv     | 23.07.91 | 49107232497 |
+| Janek   | Jooksik  | 22.11.89 | 38911222492 |
+| Jane    | Jänes    | 16.09.90 | 49009162497 |
+| Mart    | Karu     | 31.12.91 | 39112312497 |
+| Kati    | Karu     | 31.01.89 | 48901312397 |
+| Frank   | Karro    | 24.06.97 | 39706243197 |
++---------+----------+----------+-------------+
+
+
+20. Lisa lugeja tabelisse järgmised kirjed
+Joosep Sinine, isikukood: 50101013462, aadress: Tartu Tähe 43-1.
+Berit Roosa, isikukood: 60211132136, aadress: Tartu Küüni 23-11.
+
+INSERT INTO Lugeja (Eesnimi, Perenimi, Isikukood, Aadress) VALUES ('Joosep', 'Sinine', 50101013462, 'Tartu Tähe 43-1');
+INSERT INTO Lugeja (Eesnimi, Perenimi, Isikukood, Aadress) VALUES ('Berit', 'Roosa', 60211132136, 'Tartu Tähe 23-11');
+Query OK, 1 row affected (0.00 sec)
+Query OK, 1 row affected (0.00 sec)
+
+21. Väljasta lugeja tabel.
+select * from Lugeja;
++-----------+-------------+---------+----------+------------+-----------------------+----------------------+--------------+--------------------+
+| lugeja_id | isikukood   | Eesnimi | Perenimi | Telefon    | Aadress               | Email                | Amet         | Asutus             |
++-----------+-------------+---------+----------+------------+-----------------------+----------------------+--------------+--------------------+
+|         1 | 38910262497 | Kalle   | Kohin    | 56789576   | Tartu Pärna 23-12     | kalle12@hot.ee       | õpilane      | Tartu KHK          |
+|         2 | 49011292497 | Tiia    | Tuisk    | 50468977   | Tartu Riia 126        | tiia.tuisk@hotmail.c | õpetaja      | Meie kool          |
+|         3 | 49110302488 | Pille   | Pill     | 51689789   | Tartu Jalaka 12-3     | pillekas@gmail.com   | õpilane      | Meie kool          |
+|         4 | 49010162558 | Kati    | Kask     | 53459878   | Tartu Kopli 1         | kati_k@kool.ee       | juhiabi      | AS Töö             |
+|         5 | 48910012697 | Malle   | Moos     | 56423789   | Tartu Võru 54-21      |                      | koristaja    | Oü Kord ja Puhtus  |
+|         6 | 48810242787 | Mari    | Maasikas | 50458977   | Tartu Aida 3-14       |                      |              |                    |
+|         7 | 38810222497 | Joosep  | Jalakas  | 556457575  | Tartu                 | joosepjalakas@ut.ee  | lektor       | Tartu ülikool      |
+|         8 | 38712062497 | Tiit    | Tikk     | 547799133  | Tartu                 | tiit.tikk@astiit.ee  | juhataja     | As Tiit            |
+|         9 | 38911212491 | Ragnar  | Roos     | 7715478    | Tartu                 | rax_x@gmail.com      | õpilane      | Uus kool           |
+|        10 | 38806062494 | Robert  | Rohi     | 588787362  | Tartu Võru 36         | robi@uuuskool.ee     | õpetaja      | Uus kool           |
+|        11 | 39006022497 | Kevin   | Kivi     | 59791547   | Tartu Turu 5-12       | kivi@hot.ee          | õpilane      | Uus kool           |
+|        12 | 49010262577 | Sille   | Siil     | 454667993  | Tartu Võru 69         | siilike@udus.ee      | üliõpilane   | Tartu ülikool      |
+|        13 | 48910222497 | Lilli   | Lill     | 487541247  | Tartu Pärna 34        | lilli.lill@kodu.ee   | kodune       |                    |
+|        14 | 49112162497 | Luisa   | Tuul     | 558787887  | Tartu Vanemuise 56-23 | tuul@puhub.ee        |              |                    |
+|        15 | 49012292493 | Sandra  | Saar     | 589456534  | Tartu Narva mnt 34-12 |                      |              |                    |
+|        16 | 48910212197 | Kadri   | Kade     |            | Tartu Võru 89         | kati@kokk.ee         | kokk         | AS Söök ja jook    |
+|        17 | 38811202495 | Vaiko   | Kook     | 7689898    | Tartu Pikk 56-10      |                      | autojuht     | Oüauto             |
+|        18 | 38710022497 | Veiko   | Vesi     | 5877693    | Tartu Lai 76-11       | veiko@vesi.com       |              |                    |
+|        19 | 39212262427 | Hannes  | Hein     |            | Tartu Betooni 24      | heina@tool.ee        | müüja        | AS Tool            |
+|        20 | 38904292497 | Leo     | Loots    | 569873223  | Tartu Pepleri 2-1     | loots@maja.ee        | autojuht     | AS Maja            |
+|        21 | 49111162497 | Liia    | Lips     | 69876222   | Tartu Pärna 6         | lipsik@lk.ee         | müüja        | Riidepood          |
+|        22 | 38809262497 | Kalev   | Komm     | 5464645747 | Tartu Võru 33         | kalevikomm@komm.com  | müüja        | Kommipood          |
+|        23 | 49107232497 | Rita    | Rehv     | 52323424   | Tartu Riia 120        | rita.rehv@rehvivah.e | kassapidaja  | Rehvivahetus       |
+|        24 | 38911222492 | Janek   | Jooksik  | 56787900   | Tartu Raatuse 22-4    | janek@hot.ee         | õpilane      | Meie kool          |
+|        25 | 49009162497 | Jane    | Jänes    | 5424324325 | Tartu Piima 12        | jane321@hot.ee       | õpilane      | Teie kool          |
+|        26 | 39112312497 | Mart    | Karu     | 587979797  | Tartu Aleksandri 3-2  | mart.karu@teiekool.e | õpetaja      | Teie kool          |
+|        27 | 48901312397 | Kati    | Karu     | 74645679   | Tartu Jalaka 23-3     | kati.karu@teiekool.e | õpilane      | Teie kool          |
+|        28 | 39706243197 | Frank   | Karro    | 56042555   | Tartu                 | frank.karro@khk.ee   | admin        | khk                |
+|        29 | 50101013462 | Joosep  | Sinine   | NULL       | Tartu Tähe 43-1       | NULL                 | NULL         | NULL               |
+|        30 | 60211132136 | Berit   | Roosa    | NULL       | Tartu Tähe 23-11      | NULL                 | NULL         | NULL               |
++-----------+-------------+---------+----------+------------+-----------------------+----------------------+--------------+--------------------+
+
+
+22**. Väljasta lugejate ees- ja perenimed ühes veerus ning suurtähtedena. Kasuta aliast nimi.
+select concat(UPPER(eesnimi),' ',UPPER(perenimi))as Nimi from Lugeja;
++----------------+
+| Nimi           |
++----------------+
+| KALLE KOHIN    |
+| TIIA TUISK     |
+| PILLE PILL     |
+| KATI KASK      |
+| MALLE MOOS     |
+| MARI MAASIKAS  |
+| JOOSEP JALAKAS |
+| TIIT TIKK      |
+| RAGNAR ROOS    |
+| ROBERT ROHI    |
+| KEVIN KIVI     |
+| SILLE SIIL     |
+| LILLI LILL     |
+| LUISA TUUL     |
+| SANDRA SAAR    |
+| KADRI KADE     |
+| VAIKO KOOK     |
+| VEIKO VESI     |
+| HANNES HEIN    |
+| LEO LOOTS      |
+| LIIA LIPS      |
+| KALEV KOMM     |
+| RITA REHV      |
+| JANEK JOOKSIK  |
+| JANE JÄNES     |
+| MART KARU      |
+| KATI KARU      |
+| FRANK KARRO    |
+| JOOSEP SININE  |
+| BERIT ROOSA    |
++----------------+
+
+
+23**. Väljasta lugejate eesnimed, kelle eesnime esitäht ja viimane täht on samad.
+select eesnimi from Lugeja where left(eesnimi,1)=right(eesnimi,1);
++---------+
+| eesnimi |
++---------+
+| Tiit    |
+| Ragnar  |
++---------+
+
+
+24. Kuva tabelite nimed, mis on Sinu andmebaasis.
+show tables;
++-----------------------------+
+| Tables_in_karrofra_ABhaldus |
++-----------------------------+
+| KASS                        |
+| LINN                        |
+| Laenutus                    |
+| Lugeja                      |
+| Raamat                      |
+| SYNNID                      |
+| isik                        |
+| mootorratas                 |
++-----------------------------+
+
+
+25. Väljasta hetke kuupäev ja kellaaeg.
+select now();
++---------------------+
+| now()               |
++---------------------+
+| 2019-01-10 06:29:33 |
++---------------------+
+
